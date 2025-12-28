@@ -49,7 +49,29 @@ export function GamePage() {
   const matchup = getCurrentMatchup();
   const progress = getProgress();
 
+  // If no matchup and game is complete, show completion message while redirecting
   if (!matchup) {
+    // Check if the game should be complete
+    const isTournamentComplete = state.mode === 'tournament' && state.tournament?.winner;
+    const isEloComplete = state.mode === 'elo' && state.elo?.completed;
+
+    if (isTournamentComplete || isEloComplete) {
+      return (
+        <div className="min-h-screen bg-gray-50">
+          <Header />
+          <PageContainer className="flex items-center justify-center min-h-[calc(100vh-80px)]">
+            <div className="text-center">
+              <div className="text-6xl mb-4">{state.mode === 'tournament' ? '🏆' : '📊'}</div>
+              <p className="text-gray-600 text-xl">
+                {state.mode === 'tournament' ? 'Tournament Complete!' : 'Ratings Complete!'}
+              </p>
+              <p className="text-gray-400 mt-2">Preparing results...</p>
+            </div>
+          </PageContainer>
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen bg-gray-50">
         <Header />

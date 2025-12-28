@@ -67,41 +67,69 @@ export function createTournamentBracket(cars: Car[]): TournamentBracket {
     matchesInRound /= 2;
   }
 
-  // Process bye winners into second round
-  const byeWinners = firstRound
-    .filter((m) => m.winner !== null)
-    .map((m) => m.winner!);
+  // Recursively process byes through ALL rounds until no new byes are created
+  // This handles cases where multiple rounds of byes exist
+  let madeProgress = true;
+  while (madeProgress) {
+    madeProgress = false;
+    for (let r = 0; r < rounds.length; r++) {
+      for (let m = 0; m < rounds[r].length; m++) {
+        const match = rounds[r][m];
+        const car1 = match.car1;
+        const car2 = match.car2;
 
-  if (byeWinners.length > 0 && rounds.length > 1) {
-    for (let i = 0; i < firstRound.length; i++) {
-      const match = firstRound[i];
-      if (match.winner) {
-        const nextRoundMatchIndex = Math.floor(i / 2);
-        const isFirstCar = i % 2 === 0;
-        if (isFirstCar) {
-          rounds[1][nextRoundMatchIndex].car1 = match.winner;
-        } else {
-          rounds[1][nextRoundMatchIndex].car2 = match.winner;
+        // Skip if match already has a winner
+        if (match.winner) continue;
+
+        // Check if this is a bye (exactly one car present)
+        const isBye = (car1 && !car2) || (!car1 && car2);
+
+        if (isBye) {
+          const byeWinner = car1 || car2;
+          match.winner = byeWinner;
+
+          // Advance to next round if not the final
+          if (r < rounds.length - 1) {
+            const nextMatchIndex = Math.floor(m / 2);
+            const isFirstSlot = m % 2 === 0;
+            if (isFirstSlot) {
+              rounds[r + 1][nextMatchIndex].car1 = byeWinner;
+            } else {
+              rounds[r + 1][nextMatchIndex].car2 = byeWinner;
+            }
+          }
+          madeProgress = true;
         }
       }
     }
   }
 
-  // Find first non-bye match
+  // Find first playable match (both cars present, no winner)
+  let currentRound = 1;
   let currentMatch = 0;
-  for (let i = 0; i < firstRound.length; i++) {
-    if (!firstRound[i].winner) {
-      currentMatch = i;
-      break;
+  let foundMatch = false;
+
+  for (let r = 0; r < rounds.length && !foundMatch; r++) {
+    for (let m = 0; m < rounds[r].length && !foundMatch; m++) {
+      const match = rounds[r][m];
+      if (match.car1 && match.car2 && !match.winner) {
+        currentRound = r + 1;
+        currentMatch = m;
+        foundMatch = true;
+      }
     }
   }
 
+  // Check if tournament is already complete (single car or all byes led to a winner)
+  const finalMatch = rounds[rounds.length - 1][0];
+  const winner = finalMatch.winner;
+
   return {
     rounds,
-    currentRound: 1,
+    currentRound,
     currentMatch,
     totalRounds,
-    winner: null,
+    winner,
   };
 }
 
@@ -110,8 +138,8 @@ export function selectTournamentWinner(
   winner: Car
 ): TournamentBracket {
   const newBracket = JSON.parse(JSON.stringify(bracket)) as TournamentBracket;
-  const currentRound = newBracket.rounds[newBracket.currentRound - 1];
-  const currentMatch = currentRound[newBracket.currentMatch];
+  const currentRoundArr = newBracket.rounds[newBracket.currentRound - 1];
+  const currentMatch = currentRoundArr[newBracket.currentMatch];
 
   // Set the winner
   currentMatch.winner = winner;
@@ -129,27 +157,71 @@ export function selectTournamentWinner(
     }
   }
 
-  // Find next match
-  let nextMatchFound = false;
-  let round = newBracket.currentRound;
-  let match = newBracket.currentMatch + 1;
+  // Process any new byes that might have been created by this advancement
+  // This handles cases where the other slot will never get a car
+  let madeProgress = true;
+  while (madeProgress) {
+    madeProgress = false;
+    for (let r = 0; r < newBracket.rounds.length; r++) {
+      for (let m = 0; m < newBracket.rounds[r].length; m++) {
+        const match = newBracket.rounds[r][m];
 
-  while (!nextMatchFound && round <= newBracket.totalRounds) {
-    const roundMatches = newBracket.rounds[round - 1];
+        // Skip if match already has a winner
+        if (match.winner) continue;
 
-    while (match < roundMatches.length) {
-      const m = roundMatches[match];
-      // Check if this match is ready to be played (both cars present, no winner yet)
-      if (m.car1 && m.car2 && !m.winner) {
-        nextMatchFound = true;
-        break;
+        const car1 = match.car1;
+        const car2 = match.car2;
+
+        // Check if this is a bye situation (exactly one car present)
+        // and the other slot will never get a car (check source matches)
+        if ((car1 && !car2) || (!car1 && car2)) {
+          // Check if the missing car's source match is complete or empty
+          if (r > 0) {
+            // Calculate which source match would provide the missing car
+            const sourceMatchIndex = m * 2 + (car1 ? 1 : 0);
+
+            // If source match exists and has no cars and no winner, this slot will never fill
+            // Or if source match has a winner, the slot should already be filled
+            if (sourceMatchIndex < newBracket.rounds[r - 1].length) {
+              const srcMatch = newBracket.rounds[r - 1][sourceMatchIndex];
+              // If source is complete (has winner) but this slot is empty,
+              // or source can never produce a winner (both null)
+              if (srcMatch.winner || (!srcMatch.car1 && !srcMatch.car2)) {
+                const byeWinner = car1 || car2;
+                match.winner = byeWinner;
+
+                // Advance to next round
+                if (r < newBracket.rounds.length - 1) {
+                  const nextMatchIndex = Math.floor(m / 2);
+                  const isFirstSlot = m % 2 === 0;
+                  if (isFirstSlot) {
+                    newBracket.rounds[r + 1][nextMatchIndex].car1 = byeWinner;
+                  } else {
+                    newBracket.rounds[r + 1][nextMatchIndex].car2 = byeWinner;
+                  }
+                }
+                madeProgress = true;
+              }
+            }
+          }
+        }
       }
-      match++;
     }
+  }
 
-    if (!nextMatchFound) {
-      round++;
-      match = 0;
+  // Find next playable match
+  let nextMatchFound = false;
+  let round = 1;
+  let match = 0;
+
+  for (let r = 0; r < newBracket.rounds.length && !nextMatchFound; r++) {
+    for (let m = 0; m < newBracket.rounds[r].length && !nextMatchFound; m++) {
+      const matchObj = newBracket.rounds[r][m];
+      if (matchObj.car1 && matchObj.car2 && !matchObj.winner) {
+        round = r + 1;
+        match = m;
+        nextMatchFound = true;
+      }
     }
   }
 

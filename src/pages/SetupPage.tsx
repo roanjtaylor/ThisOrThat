@@ -6,27 +6,66 @@ import { PageContainer } from '../components/layout/PageContainer';
 import { Toggle } from '../components/common/Toggle';
 import { useGame } from '../context/GameContext';
 import { filterCars, getAvailableDecades, getUniqueCountries } from '../utils/filters';
-import type { Car, FilterState } from '../types';
-import carsData from '../data/cars.json';
-
-const cars = carsData as Car[];
+import { useCuratedCars } from '../hooks/useCuratedCars';
+import type { FilterState } from '../types';
 
 export function SetupPage() {
   const navigate = useNavigate();
   const { state, setMode, startGame } = useGame();
+  const { cars, isLoading, error } = useCuratedCars();
 
   const [filters, setFilters] = useState<FilterState>({
     decades: [],
     countries: [],
   });
 
-  const availableDecades = useMemo(() => getAvailableDecades(cars), []);
-  const availableCountries = useMemo(() => getUniqueCountries(cars), []);
+  const availableDecades = useMemo(() => getAvailableDecades(cars), [cars]);
+  const availableCountries = useMemo(() => getUniqueCountries(cars), [cars]);
 
   const filteredCars = useMemo(
     () => filterCars(cars, filters),
-    [filters]
+    [cars, filters]
   );
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <PageContainer>
+          <div className="flex items-center justify-center min-h-[50vh]">
+            <div className="text-center">
+              <div className="text-4xl mb-4">Loading...</div>
+              <p className="text-gray-600">Loading your curated cars...</p>
+            </div>
+          </div>
+        </PageContainer>
+      </div>
+    );
+  }
+
+  // Error or no cars
+  if (error || cars.length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <PageContainer>
+          <div className="flex items-center justify-center min-h-[50vh]">
+            <div className="text-center max-w-md">
+              <div className="text-6xl mb-4">🚗</div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">No Cars Available</h2>
+              <p className="text-gray-600 mb-6">
+                {error || 'No curated cars found. Visit /curate to add cars to your dataset.'}
+              </p>
+              <Button onClick={() => navigate('/curate')}>
+                Go to Curation Tool
+              </Button>
+            </div>
+          </div>
+        </PageContainer>
+      </div>
+    );
+  }
 
   const toggleDecade = (decade: string) => {
     setFilters((prev) => ({

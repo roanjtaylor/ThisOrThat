@@ -1,0 +1,512 @@
+[
+  {
+    "id": "ferrari-250-gto",
+    "name": "250 GTO",
+    "brand": "Ferrari",
+    "year": 1962,
+    "country": "Italy",
+    "decade": "1960s",
+    "imageUrl": "https://www.classicandsportsfinance.com/wp-content/uploads/2018/08/ferrari-250-gto-monterey-worlds-most-expensive-car-featured.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-275-gtb",
+    "name": "275 GTB",
+    "brand": "Ferrari",
+    "year": 1964,
+    "country": "Italy",
+    "decade": "1960s",
+    "imageUrl": "https://cimg1.ibsrv.net/ibimg/hgm/1920x1080-1/100/909/1964-ferrari-275-gtb-c-speciale-bearing-chassis-no-06701--photo-credit-mecum_100909829.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-308-gtb",
+    "name": "308 GTB/GTS",
+    "brand": "Ferrari",
+    "year": 1975,
+    "country": "Italy",
+    "decade": "1970s",
+    "imageUrl": "https://s1.cdn.autoevolution.com/images/gallery/FERRARI-308-GTB-5496_33.jpeg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-328",
+    "name": "328 GTB/GTS",
+    "brand": "Ferrari",
+    "year": 1985,
+    "country": "Italy",
+    "decade": "1980s",
+    "imageUrl": "https://simonfurlonger.co.uk/wp-content/uploads/2023/cars/163463538252148.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-348",
+    "name": "348",
+    "brand": "Ferrari",
+    "year": 1989,
+    "country": "Italy",
+    "decade": "1980s",
+    "imageUrl": "https://cdn.classic-trader.com/I/images/1920_1920_inset/vehicle_ad_standard_image_84d0d8d27f57584324153bfe82f854a1.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-testarossa",
+    "name": "Testarossa",
+    "brand": "Ferrari",
+    "year": 1984,
+    "country": "Italy",
+    "decade": "1980s",
+    "imageUrl": "https://maji97.com/wp-content/uploads/2024/03/otr07154-%E2%80%94-krupnyj-razmer.jpeg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-f40",
+    "name": "F40",
+    "brand": "Ferrari",
+    "year": 1987,
+    "country": "Italy",
+    "decade": "1980s",
+    "imageUrl": "https://sbraceengineering.co.uk/wp-content/uploads/Ferrari-F40-1030x773.webp",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-f50",
+    "name": "F50",
+    "brand": "Ferrari",
+    "year": 1995,
+    "country": "Italy",
+    "decade": "1990s",
+    "imageUrl": "https://cdn.rmsothebys.com/6/d/d/9/c/b/6dd9cbc12cf351592392eea64b5a8e6e7d2a8f3d.webp",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-355",
+    "name": "F355",
+    "brand": "Ferrari",
+    "year": 1994,
+    "country": "Italy",
+    "decade": "1990s",
+    "imageUrl": "https://www.supercars.net/blog/wp-content/uploads/2016/05/Screenshot-2016-05-18-16.33.06.png",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-360",
+    "name": "360 Modena",
+    "brand": "Ferrari",
+    "year": 1999,
+    "country": "Italy",
+    "decade": "1990s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Ferrari_360_Modena_-_Flickr_-_Alexandre_Pr%C3%A9vot_%2826%29_%28cropped%29.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-enzo",
+    "name": "Enzo",
+    "brand": "Ferrari",
+    "year": 2002,
+    "country": "Italy",
+    "decade": "2000s",
+    "imageUrl": "https://www.supercars.net/blog/wp-content/uploads/2016/05/cool_car_ferrari_enzo_wallpaper_hd_5.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-430",
+    "name": "F430",
+    "brand": "Ferrari",
+    "year": 2004,
+    "country": "Italy",
+    "decade": "2000s",
+    "imageUrl": "https://hagerty-media-prod.imgix.net/2020/04/Ferrari-F430-2004-dynamic.jpeg?auto=format%2Ccompress&ixlib=php-3.3.0",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-458",
+    "name": "458 Italia",
+    "brand": "Ferrari",
+    "year": 2009,
+    "country": "Italy",
+    "decade": "2000s",
+    "imageUrl": "https://www.topgear.com/sites/default/files/news/image/2015/04/Large%20Image_7348.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-488",
+    "name": "488 GTB",
+    "brand": "Ferrari",
+    "year": 2015,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://www.topgear.com/sites/default/files/cars-car/image/2015/12/li3020379_u6a0684488_1.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-laferrari",
+    "name": "LaFerrari",
+    "brand": "Ferrari",
+    "year": 2013,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/LaFerrari_in_Beverly_Hills_%2814563979888%29.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-f8",
+    "name": "F8 Tributo",
+    "brand": "Ferrari",
+    "year": 2019,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://www.goodwood.com/globalassets/.road--racing/road/news/2019/september/review-ferrari-f8-tributo/ferrari-f8-tributo-review-goodwood-03092019.jpg?rxy=0.5,0.5",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-sf90",
+    "name": "SF90 Stradale",
+    "brand": "Ferrari",
+    "year": 2019,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Red_2019_Ferrari_SF90_Stradale_%2848264238897%29_%28cropped%29.jpg/1200px-Red_2019_Ferrari_SF90_Stradale_%2848264238897%29_%28cropped%29.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-296",
+    "name": "296 GTB",
+    "brand": "Ferrari",
+    "year": 2021,
+    "country": "Italy",
+    "decade": "2020s",
+    "imageUrl": "https://images.pistonheads.com/nimg/48069/mceu_97461957421705316024645.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "ferrari-812",
+    "name": "812 Superfast",
+    "brand": "Ferrari",
+    "year": 2017,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://www.thecarexpert.co.uk/wp-content/uploads/2020/04/ferrari-812-Superfast-wallpaper-2133x1200-cropped.jpeg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-miura",
+    "name": "Miura",
+    "brand": "Lamborghini",
+    "year": 1966,
+    "country": "Italy",
+    "decade": "1960s",
+    "imageUrl": "https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1679569793/autoexpress/2023/03/Lamborghini%20Miura%20icon-4.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-countach",
+    "name": "Countach",
+    "brand": "Lamborghini",
+    "year": 1974,
+    "country": "Italy",
+    "decade": "1970s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lamborghini_Countach_-_Flickr_-_exfordy_%282%29.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-diablo",
+    "name": "Diablo",
+    "brand": "Lamborghini",
+    "year": 1990,
+    "country": "Italy",
+    "decade": "1990s",
+    "imageUrl": "https://www.carscoops.com/wp-content/uploads/2024/08/Lamborghini-Diablo-SV-3.webp",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-murcielago",
+    "name": "Murciélago",
+    "brand": "Lamborghini",
+    "year": 2001,
+    "country": "Italy",
+    "decade": "2000s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Lamborghini_Murci%C3%A9lago_LP-640_-_Flickr_-_Alexandre_Pr%C3%A9vot_%2840%29.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-gallardo",
+    "name": "Gallardo",
+    "brand": "Lamborghini",
+    "year": 2003,
+    "country": "Italy",
+    "decade": "2000s",
+    "imageUrl": "https://images.collectingcars.com/002207/cover.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-aventador",
+    "name": "Aventador",
+    "brand": "Lamborghini",
+    "year": 2011,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/11q2/395918/2011-lamborghini-aventador-lp700-4-first-drive-review-car-and-driver-photo-401084-s-original.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-huracan",
+    "name": "Huracán",
+    "brand": "Lamborghini",
+    "year": 2014,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://car-images.bauersecure.com/wp-images/13933/0000c85d25ee-bd3f-441f-a.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-revuelto",
+    "name": "Revuelto",
+    "brand": "Lamborghini",
+    "year": 2023,
+    "country": "Italy",
+    "decade": "2020s",
+    "imageUrl": "https://media.wired.com/photos/6580ba9fc9d019ec4391c2b9/master/pass/Reuelto_Grigio%20Telesto_001.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-urus",
+    "name": "Urus",
+    "brand": "Lamborghini",
+    "year": 2018,
+    "country": "Italy",
+    "decade": "2010s",
+    "imageUrl": "https://www.thecarexpert.co.uk/wp-content/uploads/2020/11/522124.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-sian",
+    "name": "Sián",
+    "brand": "Lamborghini",
+    "year": 2020,
+    "country": "Italy",
+    "decade": "2020s",
+    "imageUrl": "https://www.thesupercarblog.com/wp-content/uploads/2020/12/Lamborghini-Sian-USA-1.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-lm002",
+    "name": "LM002",
+    "brand": "Lamborghini",
+    "year": 1986,
+    "country": "Italy",
+    "decade": "1980s",
+    "imageUrl": "https://media.whichcar.com.au/uploads/2025/02/87aa50aa-Lamborghini-LM002-main.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-jalpa",
+    "name": "Jalpa",
+    "brand": "Lamborghini",
+    "year": 1981,
+    "country": "Italy",
+    "decade": "1980s",
+    "imageUrl": "https://www.secret-classics.com/wp-content/uploads/2021/11/40yrLamborghiniJalpa_04.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "lamborghini-espada",
+    "name": "Espada",
+    "brand": "Lamborghini",
+    "year": 1968,
+    "country": "Italy",
+    "decade": "1960s",
+    "imageUrl": "https://cdn.rmsothebys.com/b/c/d/7/6/1/bcd761bbcc6911ca873e59e881ad6513b855aa38.webp",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-356",
+    "name": "356",
+    "brand": "Porsche",
+    "year": 1948,
+    "country": "Germany",
+    "decade": "1940s",
+    "imageUrl": "https://www.ultimatecarpage.com/images/car/3879/Porsche-356-1-Roadster-31092.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-classic",
+    "name": "911 (Classic)",
+    "brand": "Porsche",
+    "year": 1964,
+    "country": "Germany",
+    "decade": "1960s",
+    "imageUrl": "https://cdn.rmsothebys.com/4/a/3/b/0/6/4a3b06a480fe18f7448439251d1e10aee087f184.webp",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-964",
+    "name": "911 (964)",
+    "brand": "Porsche",
+    "year": 1989,
+    "country": "Germany",
+    "decade": "1980s",
+    "imageUrl": "https://images.collectingcars.com/061144/mainimage.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-993",
+    "name": "911 (993)",
+    "brand": "Porsche",
+    "year": 1994,
+    "country": "Germany",
+    "decade": "1990s",
+    "imageUrl": "https://porschepictures.flowcenter.de/pmdb/thumbnail.cgi?id=252921&w=1935&h=1089&crop=1&public=1&cs=162e401261db0d6b",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-996",
+    "name": "911 (996)",
+    "brand": "Porsche",
+    "year": 1998,
+    "country": "Germany",
+    "decade": "1990s",
+    "imageUrl": "https://www.tradeclassics.com/wp-content/uploads/2022/07/1998-porsche-911-ocean-blue-main-hero.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-997",
+    "name": "911 (997)",
+    "brand": "Porsche",
+    "year": 2005,
+    "country": "Germany",
+    "decade": "2000s",
+    "imageUrl": "https://images.collectingcars.com/026533/mainimage.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-991",
+    "name": "911 (991)",
+    "brand": "Porsche",
+    "year": 2012,
+    "country": "Germany",
+    "decade": "2010s",
+    "imageUrl": "https://images.collectingcars.com/065695/mainimage.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-911-992",
+    "name": "911 (992)",
+    "brand": "Porsche",
+    "year": 2019,
+    "country": "Germany",
+    "decade": "2010s",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0905/5702/2506/files/143547_911_carrera_4s_992_2018_porsche_ag.jpg?v=1739174382",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-918",
+    "name": "918 Spyder",
+    "brand": "Porsche",
+    "year": 2013,
+    "country": "Germany",
+    "decade": "2010s",
+    "imageUrl": "https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1562241660/autoexpress/2/23/porsche-918-spyder-2013-front-action-2.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-carrera-gt",
+    "name": "Carrera GT",
+    "brand": "Porsche",
+    "year": 2004,
+    "country": "Germany",
+    "decade": "2000s",
+    "imageUrl": "https://images.collectingcars.com/005137/26-06-2021-rg-cc-01.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-959",
+    "name": "959",
+    "brand": "Porsche",
+    "year": 1986,
+    "country": "Germany",
+    "decade": "1980s",
+    "imageUrl": "https://media.drive.com.au/obj/tx_q:50,rs:auto:1920:1080:1/driveau/upload/cms/uploads/lwsl8pacguhmisbh3p9o",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-944",
+    "name": "944",
+    "brand": "Porsche",
+    "year": 1982,
+    "country": "Germany",
+    "decade": "1980s",
+    "imageUrl": "https://images.collectingcars.com/061118/main21.jpg?fit=clip&w=2000&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-928",
+    "name": "928",
+    "brand": "Porsche",
+    "year": 1978,
+    "country": "Germany",
+    "decade": "1970s",
+    "imageUrl": "https://images.collectingcars.com/images/2020/05/Collecting-Cars_1978-Porsche-928-18-BHL-291_resize.JPG?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-boxster",
+    "name": "Boxster/718",
+    "brand": "Porsche",
+    "year": 1996,
+    "country": "Germany",
+    "decade": "1990s",
+    "imageUrl": "https://parkers-images.bauersecure.com/wp-images/1540/cut-out/930x620/porsche_boxster_96.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-cayman",
+    "name": "Cayman/718",
+    "brand": "Porsche",
+    "year": 2005,
+    "country": "Germany",
+    "decade": "2000s",
+    "imageUrl": "https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/porsche-cayman-1_0.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-cayenne",
+    "name": "Cayenne",
+    "brand": "Porsche",
+    "year": 2002,
+    "country": "Germany",
+    "decade": "2000s",
+    "imageUrl": "https://img.autoabc.lv/Porsche-Cayenne/Porsche-Cayenne_2002_Apvidus_163115250_9.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-panamera",
+    "name": "Panamera",
+    "brand": "Porsche",
+    "year": 2009,
+    "country": "Germany",
+    "decade": "2000s",
+    "imageUrl": "https://parkers-images.bauersecure.com/wp-images/3009/cut-out/930x620/porsche_panamera_09.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-taycan",
+    "name": "Taycan",
+    "brand": "Porsche",
+    "year": 2019,
+    "country": "Germany",
+    "decade": "2010s",
+    "imageUrl": "https://www.electrive.com/media/2019/09/porsche-taycan-2019-002-min.png",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "porsche-macan",
+    "name": "Macan",
+    "brand": "Porsche",
+    "year": 2014,
+    "country": "Germany",
+    "decade": "2010s",
+    "imageUrl": "https://cdn.caranddriving.com/f2/images/used/large/Porsche/PorscheMacan2014to2018.jpg",
+    "imageAttribution": "Source: Google Images"
+  }
+]

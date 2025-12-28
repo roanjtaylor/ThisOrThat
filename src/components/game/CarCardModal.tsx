@@ -52,80 +52,97 @@ export function CarCardModal({ car, isOpen, onClose }: CarCardModalProps) {
           Image: {car.imageAttribution}
         </p>
 
-        <div>
-          <h3 className="mb-3 text-lg font-semibold text-gray-900">
-            Core Performance
-          </h3>
-          <div className="grid grid-cols-3 gap-3">
-            <StatBox label="Horsepower" value={`${car.stats.horsepower} hp`} />
-            <StatBox label="Top Speed" value={`${car.stats.topSpeedMph} mph`} />
-            <StatBox label="0-60 mph" value={`${car.stats.zeroToSixty}s`} />
-            <StatBox
-              label="Engine"
-              value={
-                car.stats.engineDisplacementL > 0
-                  ? `${car.stats.engineDisplacementL}L`
-                  : 'Electric'
-              }
-            />
-            <StatBox label="Weight" value={`${car.stats.weightLbs.toLocaleString()} lbs`} />
+        {car.stats && (
+          <div>
+            <h3 className="mb-3 text-lg font-semibold text-gray-900">
+              Core Performance
+            </h3>
+            <div className="grid grid-cols-3 gap-3">
+              <StatBox label="Horsepower" value={`${car.stats.horsepower} hp`} />
+              <StatBox label="Top Speed" value={`${car.stats.topSpeedMph} mph`} />
+              <StatBox label="0-60 mph" value={`${car.stats.zeroToSixty}s`} />
+              <StatBox
+                label="Engine"
+                value={
+                  car.stats.engineDisplacementL > 0
+                    ? `${car.stats.engineDisplacementL}L`
+                    : 'Electric'
+                }
+              />
+              <StatBox label="Weight" value={`${car.stats.weightLbs.toLocaleString()} lbs`} />
+            </div>
           </div>
-        </div>
+        )}
 
-        <div>
-          <h3 className="mb-3 text-lg font-semibold text-gray-900">
-            Extended Specifications
-          </h3>
-          <div className="grid grid-cols-2 gap-3">
-            <StatBox label="Torque" value={`${car.extendedStats.torqueLbFt} lb-ft`} />
-            {car.extendedStats.fuelEconomyMpg && (
-              <StatBox
-                label="Fuel Economy"
-                value={`${car.extendedStats.fuelEconomyMpg} MPG`}
-              />
-            )}
-            <StatBox label="Transmission" value={car.extendedStats.transmission} />
-            <StatBox label="Drivetrain" value={car.extendedStats.drivetrain} />
+        {car.extendedStats && (
+          <div>
+            <h3 className="mb-3 text-lg font-semibold text-gray-900">
+              Extended Specifications
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              <StatBox label="Torque" value={`${car.extendedStats.torqueLbFt} lb-ft`} />
+              {car.extendedStats.fuelEconomyMpg && (
+                <StatBox
+                  label="Fuel Economy"
+                  value={`${car.extendedStats.fuelEconomyMpg} MPG`}
+                />
+              )}
+              <StatBox label="Transmission" value={car.extendedStats.transmission} />
+              <StatBox label="Drivetrain" value={car.extendedStats.drivetrain} />
+            </div>
           </div>
-        </div>
+        )}
 
-        <div>
-          <h3 className="mb-3 text-lg font-semibold text-gray-900">
-            Collector Information
-          </h3>
-          <div className="grid grid-cols-2 gap-3">
-            {car.collectorStats.productionCount && (
-              <StatBox
-                label="Production Count"
-                value={car.collectorStats.productionCount.toLocaleString()}
-              />
-            )}
-            {car.collectorStats.rarityTier && (
-              <div
-                className={`rounded-lg p-3 text-center ${getRarityColor(
-                  car.collectorStats.rarityTier
-                )}`}
-              >
-                <p className="text-xs opacity-75">Rarity</p>
-                <p className="font-semibold capitalize">
-                  {car.collectorStats.rarityTier}
-                </p>
-              </div>
-            )}
-            {car.collectorStats.originalMsrp && (
-              <StatBox
-                label="Original MSRP"
-                value={`$${car.collectorStats.originalMsrp.toLocaleString()}`}
-              />
-            )}
-            {car.collectorStats.estimatedCurrentValue && (
-              <StatBox
-                label="Est. Current Value"
-                value={`$${car.collectorStats.estimatedCurrentValue.toLocaleString()}`}
-              />
-            )}
+        {car.collectorStats && (
+          <div>
+            <h3 className="mb-3 text-lg font-semibold text-gray-900">
+              Collector Information
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              {car.collectorStats.productionCount && (
+                <StatBox
+                  label="Production Count"
+                  value={car.collectorStats.productionCount.toLocaleString()}
+                />
+              )}
+              {car.collectorStats.rarityTier && (
+                <div
+                  className={`rounded-lg p-3 text-center ${getRarityColor(
+                    car.collectorStats.rarityTier
+                  )}`}
+                >
+                  <p className="text-xs opacity-75">Rarity</p>
+                  <p className="font-semibold capitalize">
+                    {car.collectorStats.rarityTier}
+                  </p>
+                </div>
+              )}
+              {car.collectorStats.originalMsrp && (
+                <StatBox
+                  label="Original MSRP"
+                  value={`$${car.collectorStats.originalMsrp.toLocaleString()}`}
+                />
+              )}
+              {car.collectorStats.estimatedCurrentValue && (
+                <StatBox
+                  label="Est. Current Value"
+                  value={`$${car.collectorStats.estimatedCurrentValue.toLocaleString()}`}
+                />
+              )}
+            </div>
           </div>
-        </div>
+        )}
+
+        {!car.stats && !car.extendedStats && !car.collectorStats && (
+          <div className="text-center py-4">
+            <p className="text-gray-500">
+              {car.decade} &middot; {car.country}
+            </p>
+            <p className="text-sm text-gray-400 mt-1">
+              Detailed stats not yet available
+            </p>
+          </div>
+        )}
       </div>
     </Modal>
   );

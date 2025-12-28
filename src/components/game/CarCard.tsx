@@ -63,18 +63,24 @@ export function CarCard({
         </div>
 
         <div className="p-4">
-          <div className="grid grid-cols-2 gap-3">
-            <StatItem label="Horsepower" value={`${car.stats.horsepower} hp`} />
-            <StatItem label="Top Speed" value={`${car.stats.topSpeedMph} mph`} />
-            <StatItem label="0-60 mph" value={`${car.stats.zeroToSixty}s`} />
-            <StatItem label="Weight" value={`${car.stats.weightLbs.toLocaleString()} lbs`} />
-            <StatItem
-              label="Engine"
-              value={car.stats.engineDisplacementL > 0 ? `${car.stats.engineDisplacementL}L` : 'Electric'}
-            />
-          </div>
+          {car.stats ? (
+            <div className="grid grid-cols-2 gap-3">
+              <StatItem label="Horsepower" value={`${car.stats.horsepower} hp`} />
+              <StatItem label="Top Speed" value={`${car.stats.topSpeedMph} mph`} />
+              <StatItem label="0-60 mph" value={`${car.stats.zeroToSixty}s`} />
+              <StatItem label="Weight" value={`${car.stats.weightLbs.toLocaleString()} lbs`} />
+              <StatItem
+                label="Engine"
+                value={car.stats.engineDisplacementL > 0 ? `${car.stats.engineDisplacementL}L` : 'Electric'}
+              />
+            </div>
+          ) : (
+            <div className="text-center py-2">
+              <p className="text-sm text-gray-500">{car.decade} {car.country}</p>
+            </div>
+          )}
 
-          {showViewMore && (
+          {showViewMore && car.stats && (
             <button
               onClick={handleViewMore}
               className="mt-4 w-full rounded-lg border border-gray-300 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"

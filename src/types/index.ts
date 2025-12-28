@@ -30,9 +30,9 @@ export interface Car {
   decade: string;
   imageUrl: string;
   imageAttribution: string;
-  stats: CarStats;
-  extendedStats: ExtendedStats;
-  collectorStats: CollectorStats;
+  stats?: CarStats;
+  extendedStats?: ExtendedStats;
+  collectorStats?: CollectorStats;
 }
 
 // Game mode types
@@ -101,3 +101,38 @@ export type GameAction =
   | { type: 'START_ELO'; payload: Car[] }
   | { type: 'ELO_SELECT_WINNER'; payload: Car }
   | { type: 'RESET_GAME' };
+
+// Curation types
+export interface ModelData {
+  id: string;
+  name: string;
+  yearStart: number;
+  yearEnd?: number;
+}
+
+export interface BrandData {
+  id: string;
+  name: string;
+  country: string;
+  models: ModelData[];
+}
+
+export interface CurationState {
+  step: 'brands' | 'models' | 'images' | 'complete';
+  selectedBrands: string[];
+  selectedModels: Record<string, string[]>;
+  currentBrandIndex: number;
+  currentModelIndex: number;
+  imageSelections: Record<string, string>;
+}
+
+export interface CuratedCar {
+  id: string;
+  name: string;
+  brand: string;
+  year: number;
+  country: string;
+  decade: string;
+  imageUrl: string;
+  imageAttribution: string;
+}
