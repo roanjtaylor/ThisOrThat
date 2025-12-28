@@ -42,6 +42,9 @@ export type GameMode = 'tournament' | 'elo';
 export interface FilterState {
   decades: string[];
   countries: string[];
+  brands: string[];
+  drivetrains: string[];
+  rarityTiers: string[];
 }
 
 // Tournament types

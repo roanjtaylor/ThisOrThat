@@ -11,14 +11,41 @@ export const DECADES = [
   '2020s',
 ];
 
+export const DRIVETRAINS = ['RWD', 'FWD', 'AWD'];
+
+export const RARITY_TIERS = ['common', 'uncommon', 'rare', 'legendary'];
+
 export function getUniqueCountries(cars: Car[]): string[] {
   const countries = new Set(cars.map((car) => car.country));
   return Array.from(countries).sort();
 }
 
+export function getUniqueBrands(cars: Car[]): string[] {
+  const brands = new Set(cars.map((car) => car.brand));
+  return Array.from(brands).sort();
+}
+
 export function getAvailableDecades(cars: Car[]): string[] {
   const decades = new Set(cars.map((car) => car.decade));
   return DECADES.filter((d) => decades.has(d));
+}
+
+export function getAvailableDrivetrains(cars: Car[]): string[] {
+  const drivetrains = new Set(
+    cars
+      .filter((car) => car.extendedStats?.drivetrain)
+      .map((car) => car.extendedStats!.drivetrain)
+  );
+  return DRIVETRAINS.filter((d) => drivetrains.has(d));
+}
+
+export function getAvailableRarityTiers(cars: Car[]): string[] {
+  const tiers = new Set<string>(
+    cars
+      .filter((car) => car.collectorStats?.rarityTier)
+      .map((car) => car.collectorStats!.rarityTier!)
+  );
+  return RARITY_TIERS.filter((t) => tiers.has(t));
 }
 
 export function filterCars(cars: Car[], filters: FilterState): Car[] {
@@ -27,7 +54,24 @@ export function filterCars(cars: Car[], filters: FilterState): Car[] {
       filters.decades.length === 0 || filters.decades.includes(car.decade);
     const matchesCountry =
       filters.countries.length === 0 || filters.countries.includes(car.country);
-    return matchesDecade && matchesCountry;
+    const matchesBrand =
+      filters.brands.length === 0 || filters.brands.includes(car.brand);
+    const matchesDrivetrain =
+      filters.drivetrains.length === 0 ||
+      (car.extendedStats?.drivetrain &&
+        filters.drivetrains.includes(car.extendedStats.drivetrain));
+    const matchesRarity =
+      filters.rarityTiers.length === 0 ||
+      (car.collectorStats?.rarityTier &&
+        filters.rarityTiers.includes(car.collectorStats.rarityTier));
+
+    return (
+      matchesDecade &&
+      matchesCountry &&
+      matchesBrand &&
+      matchesDrivetrain &&
+      matchesRarity
+    );
   });
 }
 
@@ -47,3 +91,11 @@ export function getCarCounts(
 
   return { decade: decadeCounts, country: countryCounts };
 }
+
+export const emptyFilters: FilterState = {
+  decades: [],
+  countries: [],
+  brands: [],
+  drivetrains: [],
+  rarityTiers: [],
+};
