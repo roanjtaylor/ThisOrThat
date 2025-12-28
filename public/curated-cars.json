@@ -1,5 +1,35 @@
 [
   {
+    "id": "aston-martin-db6",
+    "name": "DB6",
+    "brand": "Aston Martin",
+    "year": 1965,
+    "country": "UK",
+    "decade": "1960s",
+    "imageUrl": "https://www.hiltonandmoss.com/image-blobs/stock/590829/images/6cac7cb4-33be-424c-b61e-9ecc4ecc073c/aston_martin_db5_hilton_and_moss_12.jpg?width=2000&height=1333",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-db7",
+    "name": "DB7",
+    "brand": "Aston Martin",
+    "year": 1994,
+    "country": "UK",
+    "decade": "1990s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/1999_Aston_Martin_DB7_Vantage.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-db11",
+    "name": "DB11",
+    "brand": "Aston Martin",
+    "year": 2016,
+    "country": "UK",
+    "decade": "2010s",
+    "imageUrl": "https://car-images.bauersecure.com/wp-images/12005/z11bd-014.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
     "id": "ferrari-250-gto",
     "name": "250 GTO",
     "brand": "Ferrari",

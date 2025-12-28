@@ -24,8 +24,11 @@ export function HomePage() {
           <h1 className="cloud-title text-6xl sm:text-7xl md:text-8xl font-bold tracking-wide">
             This Or That
           </h1>
-          <p className="text-gray-300 text-xl sm:text-2xl mt-4 tracking-wide">
-            Find your favourite
+          <p
+            className="text-white text-2xl sm:text-3xl mt-4"
+            style={{ fontFamily: "'Pacifico', cursive" }}
+          >
+            Find your favourite.
           </p>
         </div>
 

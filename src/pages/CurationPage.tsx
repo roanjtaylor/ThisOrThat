@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BrandSelector } from '../components/curation/BrandSelector';
 import { ModelSelector } from '../components/curation/ModelSelector';
 import { ImageSelector } from '../components/curation/ImageSelector';
@@ -25,6 +26,7 @@ const defaultState: CurationState = {
 const CURATE_PASSWORD = import.meta.env.VITE_CURATE_PASSWORD || '';
 
 export function CurationPage() {
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -231,6 +233,12 @@ export function CurationPage() {
               Access Curation Tool
             </button>
           </form>
+          <button
+            onClick={() => navigate('/')}
+            className="w-full mt-4 px-4 py-3 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition-colors"
+          >
+            Back Home
+          </button>
         </div>
       </div>
     );
@@ -292,12 +300,20 @@ export function CurationPage() {
               </span>
             </div>
           </div>
-          <button
-            onClick={handleReset}
-            className="px-3 py-1 text-sm bg-red-600 text-white rounded hover:bg-red-700"
-          >
-            Reset Progress
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => navigate('/')}
+              className="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-500"
+            >
+              Back Home
+            </button>
+            <button
+              onClick={handleReset}
+              className="px-3 py-1 text-sm bg-red-600 text-white rounded hover:bg-red-700"
+            >
+              Reset Progress
+            </button>
+          </div>
         </div>
       </div>
 

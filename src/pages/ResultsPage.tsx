@@ -81,8 +81,8 @@ export function ResultsPage() {
                         <div className="flex gap-4 mt-2 text-sm text-gray-200">
                           <span>{state.tournament.winner.stats.horsepower} hp</span>
                           <span>{state.tournament.winner.stats.topSpeedMph} mph</span>
-                          {state.tournament.winner.stats.zeroToSixtyMph && (
-                            <span>0-60 in {state.tournament.winner.stats.zeroToSixtyMph}s</span>
+                          {state.tournament.winner.stats.zeroToSixty && (
+                            <span>0-60 in {state.tournament.winner.stats.zeroToSixty}s</span>
                           )}
                         </div>
                       )}
