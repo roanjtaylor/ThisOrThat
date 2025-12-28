@@ -24,6 +24,9 @@ export function HomePage() {
           <h1 className="cloud-title text-6xl sm:text-7xl md:text-8xl font-bold tracking-wide">
             This Or That
           </h1>
+          <p className="text-gray-300 text-xl sm:text-2xl mt-4 tracking-wide">
+            Find your favourite
+          </p>
         </div>
 
         {/* Spacer */}
@@ -42,6 +45,18 @@ export function HomePage() {
           </button>
         </div>
       </div>
+
+      {/* Curate button - bottom right */}
+      <button
+        onClick={() => navigate('/curate')}
+        className="fixed bottom-6 right-6 z-20 w-12 h-12 rounded-full bg-gray-500 hover:bg-gray-600
+                   text-white text-3xl font-bold grid place-items-center
+                   shadow-lg hover:shadow-xl transition-all duration-200
+                   hover:scale-110 active:scale-95"
+        aria-label="Add more cars"
+      >
+        <span className="-mt-1">+</span>
+      </button>
 
       {/* Cloud animation styles */}
       <style>{`

@@ -56,9 +56,40 @@ export function ResultsPage() {
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
                 Champion!
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-6">
                 {state.tournament.winner.year} {state.tournament.winner.brand} {state.tournament.winner.name}
               </p>
+
+              {/* Large Winner Image */}
+              <div className="max-w-2xl mx-auto">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-yellow-400">
+                  <img
+                    src={state.tournament.winner.imageUrl}
+                    alt={`${state.tournament.winner.year} ${state.tournament.winner.brand} ${state.tournament.winner.name}`}
+                    className="w-full h-auto object-cover"
+                  />
+                  {/* Gradient overlay at bottom with car details */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                    <div className="text-white">
+                      <div className="text-2xl font-bold">
+                        {state.tournament.winner.brand} {state.tournament.winner.name}
+                      </div>
+                      <div className="text-yellow-300 text-lg">
+                        {state.tournament.winner.year}
+                      </div>
+                      {state.tournament.winner.stats && (
+                        <div className="flex gap-4 mt-2 text-sm text-gray-200">
+                          <span>{state.tournament.winner.stats.horsepower} hp</span>
+                          <span>{state.tournament.winner.stats.topSpeedMph} mph</span>
+                          {state.tournament.winner.stats.zeroToSixtyMph && (
+                            <span>0-60 in {state.tournament.winner.stats.zeroToSixtyMph}s</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Visual Bracket */}
@@ -320,11 +351,16 @@ function VisualBracket({ bracket }: { bracket: TournamentBracket }) {
   );
 
   return (
-    <div className="flex gap-4 min-w-max justify-center">
+    <div className="flex gap-4 min-w-max justify-center items-start">
       {nonEmptyRounds.map((round, roundIndex) => {
         // Filter matches that have at least one car
         const validMatches = round.filter(match => match.car1 || match.car2);
         const isLastRound = roundIndex === nonEmptyRounds.length - 1;
+
+        // Split matches into top half (left bracket) and bottom half (right bracket)
+        const midpoint = Math.ceil(validMatches.length / 2);
+        const topHalf = validMatches.slice(0, midpoint);
+        const bottomHalf = validMatches.slice(midpoint);
 
         return (
           <div key={roundIndex} className="flex flex-col">
@@ -335,27 +371,48 @@ function VisualBracket({ bracket }: { bracket: TournamentBracket }) {
               </div>
             </div>
 
-            {/* Matches */}
-            <div
-              className="flex flex-col justify-around flex-1"
-              style={{
-                gap: `${Math.pow(2, roundIndex) * 16}px`,
-              }}
-            >
-              {validMatches.map((match) => (
-                <div key={match.id} className="relative">
-                  <MatchCard
-                    match={match}
-                    isLastRound={isLastRound}
-                    championId={championId}
-                  />
+            {/* Matches - compact layout with bracket halves separated */}
+            <div className="flex flex-col">
+              {/* Top bracket half */}
+              <div className="flex flex-col gap-2">
+                {topHalf.map((match) => (
+                  <div key={match.id} className="relative">
+                    <MatchCard
+                      match={match}
+                      isLastRound={isLastRound}
+                      championId={championId}
+                    />
+                    {roundIndex < nonEmptyRounds.length - 1 && match.winner && (
+                      <div className="absolute top-1/2 -right-4 w-4 h-px bg-gray-300" />
+                    )}
+                  </div>
+                ))}
+              </div>
 
-                  {/* Connector lines to next round */}
-                  {roundIndex < nonEmptyRounds.length - 1 && match.winner && (
-                    <div className="absolute top-1/2 -right-4 w-4 h-px bg-gray-300" />
-                  )}
+              {/* Bracket divider - only show when there are two halves */}
+              {bottomHalf.length > 0 && (
+                <div className="flex items-center gap-2 my-3">
+                  <div className="flex-1 h-px bg-gray-300" />
+                  <span className="text-gray-400 text-[10px] uppercase tracking-wider">bracket</span>
+                  <div className="flex-1 h-px bg-gray-300" />
                 </div>
-              ))}
+              )}
+
+              {/* Bottom bracket half */}
+              <div className="flex flex-col gap-2">
+                {bottomHalf.map((match) => (
+                  <div key={match.id} className="relative">
+                    <MatchCard
+                      match={match}
+                      isLastRound={isLastRound}
+                      championId={championId}
+                    />
+                    {roundIndex < nonEmptyRounds.length - 1 && match.winner && (
+                      <div className="absolute top-1/2 -right-4 w-4 h-px bg-gray-300" />
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         );
@@ -363,7 +420,7 @@ function VisualBracket({ bracket }: { bracket: TournamentBracket }) {
 
       {/* Champion Display */}
       {bracket.winner && (
-        <div className="flex flex-col justify-center ml-4">
+        <div className="flex flex-col ml-4">
           <div className="text-center mb-4">
             <div className="text-yellow-600 text-xs uppercase tracking-wider font-semibold">
               Champion

@@ -7,6 +7,7 @@ interface CarCardProps {
   onClick?: () => void;
   isClickable?: boolean;
   showViewMore?: boolean;
+  selectionState?: 'winner' | 'loser' | null;
 }
 
 export function CarCard({
@@ -14,6 +15,7 @@ export function CarCard({
   onClick,
   isClickable = true,
   showViewMore = true,
+  selectionState = null,
 }: CarCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -29,16 +31,46 @@ export function CarCard({
     setIsModalOpen(true);
   };
 
+  const getStateClasses = () => {
+    if (selectionState === 'winner') {
+      return 'ring-4 ring-green-500 scale-[1.02] winner-celebration';
+    }
+    if (selectionState === 'loser') {
+      return 'opacity-50 grayscale scale-[0.98]';
+    }
+    return '';
+  };
+
   return (
     <>
       <div
         onClick={handleClick}
-        className={`relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 ${
-          isClickable
+        className={`relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-500 ease-out ${
+          isClickable && !selectionState
             ? 'cursor-pointer hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]'
             : ''
-        }`}
+        } ${getStateClasses()}`}
       >
+        {/* Winner celebration overlay */}
+        {selectionState === 'winner' && (
+          <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden rounded-xl">
+            <div className="absolute inset-0 bg-green-500/10 animate-pulse" />
+            <div className="confetti-container">
+              {[...Array(12)].map((_, i) => (
+                <div
+                  key={i}
+                  className="confetti"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 0.3}s`,
+                    backgroundColor: ['#22c55e', '#4ade80', '#86efac', '#fbbf24', '#f59e0b'][Math.floor(Math.random() * 5)],
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
           {!imageError ? (
             <img
@@ -96,6 +128,56 @@ export function CarCard({
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+
+      <style>{`
+        .winner-celebration {
+          animation: winnerPulse 0.5s ease-out;
+        }
+
+        @keyframes winnerPulse {
+          0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+          }
+          50% {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px 10px rgba(34, 197, 94, 0.4);
+          }
+          100% {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px 5px rgba(34, 197, 94, 0.2);
+          }
+        }
+
+        .confetti-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .confetti {
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          top: -10px;
+          border-radius: 2px;
+          animation: confettiFall 1s ease-out forwards;
+        }
+
+        @keyframes confettiFall {
+          0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(150px) rotate(720deg);
+            opacity: 0;
+          }
+        }
+      `}</style>
     </>
   );
 }
