@@ -22,7 +22,7 @@ export function MiniMusicPlayer() {
     seekTo,
   } = useMusic();
 
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const previousVolume = useRef(0.3);
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;

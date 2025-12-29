@@ -114,6 +114,7 @@ export function ResultsPage() {
 
   if (state.mode === 'elo' && state.elo?.completed) {
     const rankings = getEloRankings(state.elo);
+    const champion = rankings[0]?.car;
 
     return (
       <div className="min-h-screen bg-gray-50">
@@ -121,12 +122,62 @@ export function ResultsPage() {
 
         <PageContainer>
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <span className="text-6xl block mb-4">📊</span>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Your Rankings
-              </h1>
-              <p className="text-gray-600">
+            {/* Champion Header - same style as tournament */}
+            {champion && (
+              <div className="text-center mb-8">
+                <span className="text-6xl block mb-4">🏆</span>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                  Champion!
+                </h1>
+                <p className="text-gray-600 mb-6">
+                  {champion.year} {champion.brand} {champion.name}
+                </p>
+
+                {/* Large Winner Image */}
+                <div className="max-w-2xl mx-auto mb-8">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-4 ring-yellow-400">
+                    <img
+                      src={champion.imageUrl}
+                      alt={`${champion.year} ${champion.brand} ${champion.name}`}
+                      className="w-full h-auto object-cover"
+                    />
+                    {/* Gradient overlay at bottom with car details */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                      <div className="text-white">
+                        <div className="text-2xl font-bold">
+                          {champion.brand} {champion.name}
+                        </div>
+                        <div className="text-yellow-300 text-lg">
+                          {champion.year}
+                        </div>
+                        {champion.stats && (
+                          <div className="flex gap-4 mt-2 text-sm text-gray-200">
+                            <span>{champion.stats.horsepower} hp</span>
+                            <span>{champion.stats.topSpeedMph} mph</span>
+                            {champion.stats.zeroToSixty && (
+                              <span>0-60 in {champion.stats.zeroToSixty}s</span>
+                            )}
+                          </div>
+                        )}
+                        {rankings[0] && (
+                          <div className="flex gap-4 mt-2 text-sm text-yellow-300">
+                            <span>ELO: {rankings[0].rating}</span>
+                            <span>{rankings[0].wins}W - {rankings[0].losses}L</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Rankings Header */}
+            <div className="text-center mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 mb-1">
+                Full Rankings
+              </h2>
+              <p className="text-gray-600 text-sm">
                 Based on your {state.elo.totalMatchups} comparisons
               </p>
             </div>

@@ -119,17 +119,10 @@ export function CurationPage() {
     }));
   }, []);
 
-  const handleNextBrand = useCallback(() => {
+  const handleSetBrandIndex = useCallback((index: number) => {
     setState((prev) => ({
       ...prev,
-      currentBrandIndex: Math.min(prev.currentBrandIndex + 1, prev.selectedBrands.length - 1),
-    }));
-  }, []);
-
-  const handlePrevBrand = useCallback(() => {
-    setState((prev) => ({
-      ...prev,
-      currentBrandIndex: Math.max(prev.currentBrandIndex - 1, 0),
+      currentBrandIndex: index,
     }));
   }, []);
 
@@ -343,9 +336,8 @@ export function CurationPage() {
             onToggleModel={handleToggleModel}
             onSelectAll={handleSelectAllModels}
             onDeselectAll={handleDeselectAllModels}
-            onNextBrand={handleNextBrand}
-            onPrevBrand={handlePrevBrand}
             onFinish={handleFinishModels}
+            onSetBrandIndex={handleSetBrandIndex}
           />
         </>
       )}
