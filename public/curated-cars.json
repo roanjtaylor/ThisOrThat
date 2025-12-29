@@ -1,5 +1,15 @@
 [
   {
+    "id": "aston-martin-db5",
+    "name": "DB5",
+    "brand": "Aston Martin",
+    "year": 1963,
+    "country": "UK",
+    "decade": "1960s",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Aston_Martin_DB5_%28Skyfall%29.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
     "id": "aston-martin-db6",
     "name": "DB6",
     "brand": "Aston Martin",
@@ -20,6 +30,66 @@
     "imageAttribution": "Source: Google Images"
   },
   {
+    "id": "aston-martin-vanquish",
+    "name": "Vanquish",
+    "brand": "Aston Martin",
+    "year": 2001,
+    "country": "UK",
+    "decade": "2000s",
+    "imageUrl": "https://images.collectingcars.com/images/2020/07/cover-8.jpg?w=1263&fit=fillmax&crop=edges&auto=format,compress&cs=srgb&q=85",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-db9",
+    "name": "DB9",
+    "brand": "Aston Martin",
+    "year": 2004,
+    "country": "UK",
+    "decade": "2000s",
+    "imageUrl": "https://www.topgear.com/sites/default/files/2024/08/9CD6CE9B-54E8-46F3-88C0-1F6627C49CCE.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-vantage-v8",
+    "name": "V8 Vantage",
+    "brand": "Aston Martin",
+    "year": 2005,
+    "country": "UK",
+    "decade": "2000s",
+    "imageUrl": "https://images.postwarclassic.com/pics/r2w-1200x800-caradverts/476709/r-ref-122-2005-aston-martin-v8-vantage-coupe-1.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-one-77",
+    "name": "One-77",
+    "brand": "Aston Martin",
+    "year": 2009,
+    "country": "UK",
+    "decade": "2000s",
+    "imageUrl": "https://www.dkeng.co.uk/sales_images/1429052400/large_1429116159_29e0a96d3aa8f302ae1dfa089897cef7e5529563.JPG",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-vanquish-2",
+    "name": "Vanquish (2nd gen)",
+    "brand": "Aston Martin",
+    "year": 2012,
+    "country": "UK",
+    "decade": "2010s",
+    "imageUrl": "https://www.supercars.net/blog/wp-content/uploads/2024/02/jpg-medium-vanquish-launch-09.webp",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-vulcan",
+    "name": "Vulcan",
+    "brand": "Aston Martin",
+    "year": 2015,
+    "country": "UK",
+    "decade": "2010s",
+    "imageUrl": "https://www.classicdriver.com/sites/default/files/cars_images/feed_580865/orig_1816.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
     "id": "aston-martin-db11",
     "name": "DB11",
     "brand": "Aston Martin",
@@ -27,6 +97,56 @@
     "country": "UK",
     "decade": "2010s",
     "imageUrl": "https://car-images.bauersecure.com/wp-images/12005/z11bd-014.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-dbs",
+    "name": "DBS Superleggera",
+    "brand": "Aston Martin",
+    "year": 2018,
+    "country": "UK",
+    "decade": "2010s",
+    "imageUrl": "https://www.thecarexpert.co.uk/wp-content/uploads/2021/08/DBS_Superleggera_19-wallpaper-2133x1200-cropped.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-vantage",
+    "name": "Vantage",
+    "brand": "Aston Martin",
+    "year": 2018,
+    "country": "UK",
+    "decade": "2010s",
+    "imageUrl": "https://carsguide-res.cloudinary.com/image/upload/c_fit,h_841,w_1490,f_auto,t_cg_base/v1/editorial/2018-Aston-Martin-Vantage-coupe-Silver-1200x800-(3).jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-dbx",
+    "name": "DBX",
+    "brand": "Aston Martin",
+    "year": 2020,
+    "country": "UK",
+    "decade": "2020s",
+    "imageUrl": "https://images.pistonheads.com/nimg/42893/aston-martin-dbx-hyper-red-a1-aml-1-jpg..jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-valkyrie",
+    "name": "Valkyrie",
+    "brand": "Aston Martin",
+    "year": 2021,
+    "country": "UK",
+    "decade": "2020s",
+    "imageUrl": "https://media.gq-magazine.co.uk/photos/6405fb643e977a7efb8a7764/master/pass/Aston-Martin-Valkyrie-HED.jpg",
+    "imageAttribution": "Source: Google Images"
+  },
+  {
+    "id": "aston-martin-db12",
+    "name": "DB12",
+    "brand": "Aston Martin",
+    "year": 2023,
+    "country": "UK",
+    "decade": "2020s",
+    "imageUrl": "https://www.goodwood.com/globalassets/.road--racing/reviews/aston-martin/db12-july-23/aston-martin-db12-review-first-drive-37.jpg?rxy=0.5,0.5",
     "imageAttribution": "Source: Google Images"
   },
   {
