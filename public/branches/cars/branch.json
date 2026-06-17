@@ -1,0 +1,17 @@
+{
+  "id": "cars",
+  "label": "Cars",
+  "tagline": "Find the shape your eye loves.",
+  "status": "curating",
+  "itemNoun": { "singular": "car", "plural": "cars" },
+  "titleTemplate": "${year} ${maker} ${name}",
+  "cardFacts": [
+    { "key": "country", "label": "Origin", "format": "text" },
+    { "key": "bodyStyle", "label": "Body", "format": "text" }
+  ],
+  "filterFacets": [
+    { "key": "year", "label": "Decade", "source": "fact", "type": "range", "bucket": { "size": 10, "suffix": "s" } },
+    { "key": "country", "label": "Origin", "source": "fact", "type": "enum" },
+    { "key": "tags", "label": "Style", "source": "tag", "type": "enum" }
+  ]
+}
