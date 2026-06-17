@@ -13,8 +13,7 @@
     "curate:prepare": "tsx scripts/curate/prepare-item.ts",
     "curate:decide": "tsx scripts/curate/decide.ts",
     "curate:commit": "tsx scripts/curate/commit-pick.ts",
-    "curate:report": "tsx scripts/curate/report.ts",
-    "review:server": "tsx scripts/curate/review-server.ts"
+    "curate:report": "tsx scripts/curate/report.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",

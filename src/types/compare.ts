@@ -39,3 +39,17 @@ export interface TournamentBracket {
   totalRounds: number;
   winner: Item | null;
 }
+
+export interface FacetAffinity {
+  value: string;
+  affinity: number; // -1..+1, centred on 0 (0 = average preference)
+  count: number;
+}
+
+export interface TasteProfile {
+  ranked: Item[];
+  topPicks: Item[];
+  // affinities per filter-facet key, strongest first
+  facetAffinities: Record<string, { label: string; values: FacetAffinity[] }>;
+  signature: { facetLabel: string; value: string; affinity: number }[];
+}

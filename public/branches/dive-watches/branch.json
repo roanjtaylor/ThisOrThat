@@ -1,0 +1,18 @@
+{
+  "id": "dive-watches",
+  "label": "Dive Watches",
+  "tagline": "Find the dial your eye keeps returning to.",
+  "status": "ready",
+  "itemNoun": { "singular": "watch", "plural": "watches" },
+  "titleTemplate": "${maker} ${name}",
+  "cardFacts": [
+    { "key": "caseMm", "label": "Case", "suffix": "mm", "format": "number" },
+    { "key": "movement", "label": "Movement", "format": "text" }
+  ],
+  "filterFacets": [
+    { "key": "year", "label": "Decade", "source": "fact", "type": "range", "bucket": { "size": 10, "suffix": "s" } },
+    { "key": "country", "label": "Origin", "source": "fact", "type": "enum" },
+    { "key": "movement", "label": "Movement", "source": "fact", "type": "enum" },
+    { "key": "tags", "label": "Character", "source": "tag", "type": "enum" }
+  ]
+}

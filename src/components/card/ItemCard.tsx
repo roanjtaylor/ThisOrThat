@@ -1,5 +1,6 @@
 import type { Branch, Item } from '../../types';
 import { fillTitle, formatFact } from '../../lib/facets';
+import { FitImage } from '../common/FitImage';
 
 export type CardState = 'idle' | 'winner' | 'loser';
 
@@ -31,14 +32,12 @@ export function ItemCard({ item, branch, state = 'idle', onSelect, onInfo }: Pro
       disabled={!onSelect}
       className={`group relative block w-full overflow-hidden rounded-2xl bg-neutral-900 text-left transition-all duration-200 ${ring} ${onSelect ? 'cursor-pointer' : 'cursor-default'}`}
     >
-      <div className="aspect-[16/10] w-full overflow-hidden bg-neutral-800">
-        <img
-          src={item.imageUrl}
-          alt={title}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      </div>
+      <FitImage
+        src={item.imageUrl}
+        alt={title}
+        className="aspect-[16/10] w-full"
+        imgClassName="transition-transform duration-300 group-hover:scale-[1.03]"
+      />
 
       <div className="p-4">
         <h3 className="text-lg font-bold leading-tight">{title}</h3>

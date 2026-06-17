@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage';
 import { SetupPage } from './pages/SetupPage';
 import { ComparePage } from './pages/ComparePage';
 import { ResultsPage } from './pages/ResultsPage';
+import { ReviewPage } from './pages/ReviewPage';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route path="/:branch" element={<SetupPage />} />
           <Route path="/:branch/play" element={<ComparePage />} />
           <Route path="/:branch/results" element={<ResultsPage />} />
+          {/* Curator-only, dev builds only. */}
+          {import.meta.env.DEV && <Route path="/review/:branch" element={<ReviewPage />} />}
         </Routes>
       </BrowserRouter>
     </SessionProvider>

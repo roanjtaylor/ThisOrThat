@@ -1,5 +1,6 @@
 import type { Branch, Item } from '../../types';
 import { fillTitle, formatFact } from '../../lib/facets';
+import { FitImage } from '../common/FitImage';
 
 interface Props {
   item: Item | null;
@@ -23,7 +24,7 @@ export function ItemCardModal({ item, branch, onClose }: Props) {
         className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-neutral-900 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={item.imageUrl} alt={title} className="aspect-[16/10] w-full object-cover" />
+        <FitImage src={item.imageUrl} alt={title} className="aspect-[16/10] w-full" />
         <div className="p-6">
           <div className="flex items-start justify-between gap-4">
             <h2 className="text-2xl font-bold">{title}</h2>

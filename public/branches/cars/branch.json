@@ -2,7 +2,7 @@
   "id": "cars",
   "label": "Cars",
   "tagline": "Find the shape your eye loves.",
-  "status": "curating",
+  "status": "ready",
   "itemNoun": { "singular": "car", "plural": "cars" },
   "titleTemplate": "${year} ${maker} ${name}",
   "cardFacts": [
