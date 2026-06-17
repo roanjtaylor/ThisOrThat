@@ -14,7 +14,8 @@
       "Bash(done)",
       "Bash(node:*)",
       "WebSearch",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "PowerShell(npx playwright install chromium 2>&1 | Select-Object -Last 5)"
     ]
   }
 }
