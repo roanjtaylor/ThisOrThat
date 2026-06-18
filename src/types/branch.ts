@@ -16,6 +16,12 @@ export interface CardFact {
 
 export type BranchStatus = 'draft' | 'curating' | 'ready';
 
+// A reason you can attach to a choice — the vocabulary of taste for this domain.
+export interface CritiqueDimension {
+  key: string;
+  label: string;
+}
+
 export interface Branch {
   id: string;
   label: string;
@@ -25,6 +31,7 @@ export interface Branch {
   titleTemplate?: string; // default "${year} ${maker} ${name}"
   cardFacts: CardFact[];
   filterFacets: FacetConfig[];
+  critiqueDimensions?: CritiqueDimension[];
 }
 
 export interface BranchRegistryEntry {

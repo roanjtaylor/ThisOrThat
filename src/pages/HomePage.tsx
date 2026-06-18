@@ -15,12 +15,23 @@ export function HomePage() {
 
   return (
     <PageContainer>
+      {import.meta.env.DEV && (
+        <div className="flex justify-end">
+          <button
+            onClick={() => navigate('/datasets')}
+            className="rounded-full border border-neutral-800 bg-neutral-900 px-4 py-1.5 text-sm font-semibold text-sky-300 hover:border-sky-500/50"
+          >
+            Datasets
+          </button>
+        </div>
+      )}
+
       <header className="mx-auto max-w-2xl py-12 text-center">
         <h1 className="bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-5xl font-black tracking-tight text-transparent sm:text-6xl">
           Train Your Eye
         </h1>
         <p className="mt-4 text-lg text-neutral-400">
-          Develop your visual taste by comparing beautifully-designed things, two at a time.
+          Develop your visual taste by comparing beautifully-designed things.
           Discover what your eye truly loves.
         </p>
       </header>

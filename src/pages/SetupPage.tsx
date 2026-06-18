@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import type { CompareMode } from '../types';
+import type { CompareMode, CompareView } from '../types';
 import { useBranchData } from '../hooks/useBranchData';
 import { applyFacets, type FacetState } from '../lib/facets';
 import { useSession } from '../context/SessionContext';
@@ -16,6 +16,7 @@ export function SetupPage() {
 
   const [facetState, setFacetState] = useState<FacetState>({});
   const [mode, setMode] = useState<CompareMode>('elo');
+  const [view, setView] = useState<CompareView>('pair');
 
   const filtered = useMemo(() => {
     if (!data) return [];
@@ -35,7 +36,7 @@ export function SetupPage() {
 
   function startGame() {
     if (filtered.length < 2) return;
-    start(branch, mode, filtered);
+    start(branch, mode, view, filtered);
     navigate(`/${branch.id}/play`);
   }
 
@@ -60,8 +61,14 @@ export function SetupPage() {
           <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5">
             <div className="mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-400">Mode</div>
             <div className="grid grid-cols-2 gap-2">
-              <ModeButton active={mode === 'elo'} onClick={() => setMode('elo')} title="Ranking" subtitle="Rate them all" />
+              <ModeButton active={mode === 'elo'} onClick={() => setMode('elo')} title="Ranking" subtitle="Rate them all (ELO)" />
               <ModeButton active={mode === 'tournament'} onClick={() => setMode('tournament')} title="Bracket" subtitle="One winner" />
+            </div>
+
+            <div className="mt-5 mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-400">View</div>
+            <div className="grid grid-cols-2 gap-2">
+              <ModeButton active={view === 'pair'} onClick={() => setView('pair')} title="1 v 1" subtitle="Two at a time" />
+              <ModeButton active={view === 'quad'} onClick={() => setView('quad')} title="4 up" subtitle="Tap the best of 4" />
             </div>
           </div>
 

@@ -98,38 +98,6 @@
     }
   },
   {
-    "id": "doxa-sub-300",
-    "branch": "dive-watches",
-    "name": "SUB 300",
-    "maker": "Doxa",
-    "year": 1967,
-    "imageUrl": "",
-    "thumbUrl": "",
-    "license": {
-      "license": "unknown",
-      "attribution": "unknown",
-      "sourceUrl": ""
-    },
-    "tags": [
-      "vintage",
-      "colourful"
-    ],
-    "facts": {
-      "country": "Switzerland",
-      "movement": "Automatic",
-      "caseMm": 42
-    },
-    "curation": {
-      "confidence": "low",
-      "flagged": true,
-      "flagReason": "no Doxa SUB image on Wikimedia Commons",
-      "model": "claude-opus-4-8",
-      "judgedAt": "2026-06-17T17:08:43.481Z",
-      "candidatesConsidered": 0,
-      "score": 0
-    }
-  },
-  {
     "id": "iwc-aquatimer",
     "branch": "dive-watches",
     "name": "Aquatimer",
@@ -260,38 +228,6 @@
     }
   },
   {
-    "id": "panerai-luminor-submersible",
-    "branch": "dive-watches",
-    "name": "Luminor Submersible",
-    "maker": "Panerai",
-    "year": 1998,
-    "imageUrl": "",
-    "thumbUrl": "",
-    "license": {
-      "license": "unknown",
-      "attribution": "unknown",
-      "sourceUrl": ""
-    },
-    "tags": [
-      "bold",
-      "modern"
-    ],
-    "facts": {
-      "country": "Italy",
-      "movement": "Automatic",
-      "caseMm": 44
-    },
-    "curation": {
-      "confidence": "low",
-      "flagged": true,
-      "flagReason": "Commons only has Luminor Marina (no dive bezel), not the Submersible",
-      "model": "claude-opus-4-8",
-      "judgedAt": "2026-06-17T17:08:42.496Z",
-      "candidatesConsidered": 5,
-      "score": 0
-    }
-  },
-  {
     "id": "rolex-submariner",
     "branch": "dive-watches",
     "name": "Submariner",
@@ -325,38 +261,6 @@
     }
   },
   {
-    "id": "seiko-tuna",
-    "branch": "dive-watches",
-    "name": "Tuna (6159)",
-    "maker": "Seiko",
-    "year": 1975,
-    "imageUrl": "",
-    "thumbUrl": "",
-    "license": {
-      "license": "unknown",
-      "attribution": "unknown",
-      "sourceUrl": ""
-    },
-    "tags": [
-      "professional",
-      "unconventional"
-    ],
-    "facts": {
-      "country": "Japan",
-      "movement": "Automatic",
-      "caseMm": 49
-    },
-    "curation": {
-      "confidence": "low",
-      "flagged": true,
-      "flagReason": "no Seiko Tuna image on Wikimedia Commons",
-      "model": "claude-opus-4-8",
-      "judgedAt": "2026-06-17T17:08:45.486Z",
-      "candidatesConsidered": 0,
-      "score": 0
-    }
-  },
-  {
     "id": "seiko-skx007",
     "branch": "dive-watches",
     "name": "SKX007",
@@ -387,38 +291,6 @@
       "judgedAt": "2026-06-17T17:08:35.406Z",
       "candidatesConsidered": 2,
       "score": 90
-    }
-  },
-  {
-    "id": "sinn-u1",
-    "branch": "dive-watches",
-    "name": "U1",
-    "maker": "Sinn",
-    "year": 2005,
-    "imageUrl": "",
-    "thumbUrl": "",
-    "license": {
-      "license": "unknown",
-      "attribution": "unknown",
-      "sourceUrl": ""
-    },
-    "tags": [
-      "tool",
-      "modern"
-    ],
-    "facts": {
-      "country": "Germany",
-      "movement": "Automatic",
-      "caseMm": 44
-    },
-    "curation": {
-      "confidence": "low",
-      "flagged": true,
-      "flagReason": "no Sinn U1 image on Wikimedia Commons",
-      "model": "claude-opus-4-8",
-      "judgedAt": "2026-06-17T17:08:44.506Z",
-      "candidatesConsidered": 0,
-      "score": 0
     }
   },
   {

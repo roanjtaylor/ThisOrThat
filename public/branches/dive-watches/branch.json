@@ -14,5 +14,13 @@
     { "key": "country", "label": "Origin", "source": "fact", "type": "enum" },
     { "key": "movement", "label": "Movement", "source": "fact", "type": "enum" },
     { "key": "tags", "label": "Character", "source": "tag", "type": "enum" }
+  ],
+  "critiqueDimensions": [
+    { "key": "legibility", "label": "Dial legibility" },
+    { "key": "proportion", "label": "Case proportions" },
+    { "key": "bezel", "label": "Bezel & insert" },
+    { "key": "dialTexture", "label": "Dial texture & depth" },
+    { "key": "handsIndices", "label": "Hands & indices" },
+    { "key": "presence", "label": "Wrist presence" }
   ]
 }

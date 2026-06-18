@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import type { Item } from '../types';
 import { useSession } from '../context/SessionContext';
 import { getEloRankings } from '../lib/elo';
+import { getHeatsRanking } from '../lib/heats';
 import { fillTitle } from '../lib/facets';
 import { computeTasteProfile } from '../lib/tasteProfile';
 import { PageContainer } from '../components/layout/PageContainer';
@@ -22,14 +23,10 @@ export function ResultsPage() {
 
   const ranking = useMemo<Item[]>(() => {
     if (!session) return [];
-    if (session.mode === 'elo' && session.elo) return getEloRankings(session.elo).map((r) => r.item);
-    if (session.mode === 'tournament' && session.tournament) {
-      const wins = new Map<string, number>();
-      session.items.forEach((it) => wins.set(it.id, 0));
-      for (const round of session.tournament.rounds)
-        for (const m of round) if (m.winner) wins.set(m.winner.id, (wins.get(m.winner.id) || 0) + 1);
-      return [...session.items].sort((a, b) => (wins.get(b.id) || 0) - (wins.get(a.id) || 0));
-    }
+    // Ranking mode (either view) accumulates into the same ELO ratings.
+    if (session.elo) return getEloRankings(session.elo).map((r) => r.item);
+    if (session.mode === 'tournament' && session.heats)
+      return getHeatsRanking(session.heats, session.items);
     return [];
   }, [session]);
 
